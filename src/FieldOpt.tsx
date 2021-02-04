@@ -16,12 +16,7 @@ interface SelectFieldOpt extends FieldOptBase {
 	options: [label: string, value: string][];
 }
 
-interface RangeFieldOpt extends FieldOptBase {
-	type: 'range';
-	options: [label: string, value: string][];
-}
-
-type FieldOpt = TextFieldOpt | SelectFieldOpt | RangeFieldOpt;
+type FieldOpt = TextFieldOpt | SelectFieldOpt;
 
 type FieldState = {
 	selected: boolean;
@@ -64,9 +59,6 @@ export function fieldOptToElement(
 					{deleter}
 				</div>
 			);
-
-		case 'range':
-			return null;
 
 		default:
 			return null;
